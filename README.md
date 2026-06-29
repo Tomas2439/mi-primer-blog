@@ -19,8 +19,6 @@ Está construido con una arquitectura híbrida que combina **Astro** para la vis
 
 ## 🚀 Cómo ejecutar el proyecto localmente
 
-## 🚀 Cómo ejecutar el proyecto localmente
-
 1. Clona este repositorio.
 2. Instala las dependencias: `pnpm install`
 3. Inicia el servidor de desarrollo: `pnpm run dev`
