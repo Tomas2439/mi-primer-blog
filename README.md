@@ -1,63 +1,42 @@
-# Astro Starter Kit: Blog
+# 📝 Mi primer blog - Una web de Reseñas
 
-```sh
-pnpm create astro@latest -- --template blog
-```
+En este proyecto intente realizar un Blog de Reseñas de Series y Animes. <br/>
+Está construido con una arquitectura híbrida que combina **Astro** para la vista pública, con un panel de administración dinámico en **React** para la redacción de contenido.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Tecnologías Utilizadas
 
-Features:
+* **Frontend Público:** Astro (Componentes `.astro` y HTML/CSS puro para máxima velocidad).
+* **Panel de Edición:** React y BlockNote (para el editor de texto enriquecido WYSIWYG).
+* **Backend / Sistema de Archivos:** Node.js (Manejo de peticiones de servidor y escritura en disco con `fs/promises`).
+* **Gestor de Paquetes:** pnpm.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## ✨ Funcionalidades Principales
 
-## 🚀 Project Structure
+1.  **Grilla de Reseñas:** Visualización rápida de publicaciones en formato tarjeta.
+2.  **Panel de Redacción Privado (`/redactar`):** Un entorno de escritura visual que no requiere escribir código.
+3.  **Automatización de Markdown:** Al guardar una reseña en el panel, el sistema genera automáticamente el archivo `.md` con el Frontmatter configurado.
+4.  **Gestor de Imágenes:** Subida de archivos binarios (imágenes de portada) que se depositan automáticamente en la carpeta de *assets* y se enlazan al post.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Cómo ejecutar el proyecto localmente
 
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+1. Clona este repositorio.
+2. Instala las dependencias:
+   \`\`\`bash
+   pnpm install
+   \`\`\`
+3. Inicia el servidor de desarrollo:
+   \`\`\`bash
+   pnpm run dev
+   \`\`\`
+4. Abre tu navegador en `http://localhost:4321/`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 📂 Estructura clave del proyecto
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+* `/src/pages/`: Contiene el enrutamiento principal (`index.astro`, `/home`, `/about`) y la API.
+* `/src/pages/api/guardar.ts`: El endpoint que procesa el formulario, guarda la imagen y escribe el archivo `.md`.
+* `/src/components/Editor.tsx`: El panel de redacción visual en React.
+* `/src/content/blog/`: Donde se guardan (automáticamente) las reseñas generadas en Markdown.
+* `/src/assets/`: Carpeta de destino automatizada para las imágenes subidas.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+---
+*Desarrollado con 🧉 desde Necochea, Argentina.*
